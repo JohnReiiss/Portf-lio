@@ -1,89 +1,88 @@
-
-/*ESTILO GERAL*/
-*{
+/* ESTILO GERAL */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
     background-color: #000;
     height: 100vh;
 }
 
-.interface{
+.interface {
     max-width: 1280px;
     margin: 0 auto;
 }
 
 .logo img {
-    max-width: 300px; /* Ajuste do tamanho */
+    max-width: 100%; /* Ajuste para que a imagem não ultrapasse a largura do container */
     height: auto; /* Mantém a proporção original */
-  }
+}
 
-.flex{
+.flex {
     display: flex;
 }
-  
-.btn-contato button{
+
+.btn-contato button {
     padding: 10px 40px;
     font-size: 18px;
     font-weight: 600;
     background-color: rgb(110, 53, 255);
     border: 0;
     border-radius: 30px;
-    cursor:pointer;
+    cursor: pointer;
     transition: 0.5s;
 }
 
-/*ESTILO DO CABEÇALHO*/
-header{
+/* ESTILO DO CABEÇALHO */
+header {
     padding: 40px 4%;
 }
 
-header > .interface{
+header > .interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-header a{
+header a {
     color: #5c5c5c;
     text-decoration: none;
     display: inline-block;
     transition: .2s;
 }
 
-header a:hover{
-color: #fff;
-transform: scale(1.05);
+header a:hover {
+    color: #fff;
+    transform: scale(1.05);
 }
 
-header nav ul{
-list-style-type: none;
+header nav ul {
+    list-style-type: none;
 }
 
-header nav ul li{
+header nav ul li {
     display: inline-block;
     padding: 0 40px;
 }
 
-.btn-contato button:hover{
-box-shadow: 0px 0px 8px rgb(110, 53, 255);
-transition: .2s;
-transform: scale(1.05);
+.btn-contato button:hover {
+    box-shadow: 0px 0px 8px rgb(110, 53, 255);
+    transition: .2s;
+    transform: scale(1.05);
 }
 
 /* ESTILO DO TOPO DO SITE */
-section.topo-do-site{
+section.topo-do-site {
     padding: 40px 4%;
 }
 
-section.topo-do-site .flex{
-align-items: center;
-justify-content: center;
-gap: 90px;
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
 }
 
 .img-topo-site img {
@@ -91,39 +90,71 @@ gap: 90px;
     height: auto; /* Para manter a proporção original */
 }
 
-.topo-do-site h1{
+.topo-do-site h1 {
     color: #fff;
     font-size: 35px;
     line-height: 30px;
 }
 
-.txt-topo-site h1 span{
-color: rgb(110, 53, 255);
+.txt-topo-site h1 span {
+    color: rgb(110, 53, 255);
 }
 
-.txt-topo-site p{
-    color:#fff;
+.txt-topo-site p {
+    color: #fff;
     margin: 40px 0px;
 }
 
 .img-topo-site {
-    height: 300px; /* Altura do elemento pai, foi verificado que sem este elemento, não há possibilidade de acontecer animação, pois sem uma altura definida para o elemento pai .img-topo-site a visibilidade da animação em porcentagem é aumentada, porém se este elemento não estiver no CSS basta trocar top de 30% por um top de 30px. */
-
-    /* px é uma medida absoluta, por isso a animação funciona independentemente do tamanho do elemento pai.
-    % é uma medida relativa, então funciona apenas se o elemento pai tiver uma altura definida. Quando você adiciona a altura no elemento pai, o navegador consegue calcular as porcentagens corretamente.*/
+    height: 300px; /* Altura do elemento pai */
 }
 
-
-.topo-do-site .img-topo-site img{
+.topo-do-site .img-topo-site img {
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
 }
 
-@keyframes flutuar{
-    0%{
+@keyframes flutuar {
+    0% {
         top: 0;
     }
-    100%{
+    100% {
         top: 30%;
     }
 }
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 2%; /* Menos padding em telas menores */
+    }
+
+    header > .interface {
+        flex-direction: column; /* Coloca os itens em coluna */
+        align-items: flex-start; /* Alinha à esquerda */
+    }
+
+    header nav ul li {
+        display: block; /* Itens da lista em bloco */
+        padding: 10px 0; /* Padding para espaço entre os itens */
+    }
+
+    .topo-do-site h1 {
+        font-size: 28px; /* Tamanho da fonte menor */
+    }
+
+    .btn-contato button {
+        padding: 10px 20px; /* Menos padding para botões */
+        font-size: 16px; /* Tamanho da fonte menor */
+    }
+
+    section.topo-do-site .flex {
+        flex-direction: column; /* Alinha o conteúdo em coluna */
+        gap: 20px; /* Menor espaço entre os itens */
+    }
+
+    .img-topo-site {
+        height: 200px; /* Menor altura para imagem em dispositivos móveis */
+    }
+}
+
