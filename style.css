@@ -1,0 +1,129 @@
+
+/*ESTILO GERAL*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #000;
+    height: 100vh;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.logo img {
+    max-width: 300px; /* Ajuste do tamanho */
+    height: auto; /* Mantém a proporção original */
+  }
+
+.flex{
+    display: flex;
+}
+  
+.btn-contato button{
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: rgb(110, 53, 255);
+    border: 0;
+    border-radius: 30px;
+    cursor:pointer;
+    transition: 0.5s;
+}
+
+/*ESTILO DO CABEÇALHO*/
+header{
+    padding: 40px 4%;
+}
+
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{
+    color: #5c5c5c;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header a:hover{
+color: #fff;
+transform: scale(1.05);
+}
+
+header nav ul{
+list-style-type: none;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+.btn-contato button:hover{
+box-shadow: 0px 0px 8px rgb(110, 53, 255);
+transition: .2s;
+transform: scale(1.05);
+}
+
+/* ESTILO DO TOPO DO SITE */
+section.topo-do-site{
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex{
+align-items: center;
+justify-content: center;
+gap: 90px;
+}
+
+.img-topo-site img {
+    width: 100%; /* Ajustar conforme necessário */
+    height: auto; /* Para manter a proporção original */
+}
+
+.topo-do-site h1{
+    color: #fff;
+    font-size: 35px;
+    line-height: 30px;
+}
+
+.txt-topo-site h1 span{
+color: rgb(110, 53, 255);
+}
+
+.txt-topo-site p{
+    color:#fff;
+    margin: 40px 0px;
+}
+
+.img-topo-site {
+    height: 300px; /* Altura do elemento pai, foi verificado que sem este elemento, não há possibilidade de acontecer animação, pois sem uma altura definida para o elemento pai .img-topo-site a visibilidade da animação em porcentagem é aumentada, porém se este elemento não estiver no CSS basta trocar top de 30% por um top de 30px. */
+
+    /* px é uma medida absoluta, por isso a animação funciona independentemente do tamanho do elemento pai.
+    % é uma medida relativa, então funciona apenas se o elemento pai tiver uma altura definida. Quando você adiciona a altura no elemento pai, o navegador consegue calcular as porcentagens corretamente.*/
+}
+
+
+.topo-do-site .img-topo-site img{
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30%;
+    }
+}
