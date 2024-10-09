@@ -47,6 +47,12 @@ h2.titulo span{
     color: rgb(110, 53, 255)
 }
 
+button:hover {
+    box-shadow: 0px 0px 8px rgb(110, 53, 255);
+    transition: .2s;
+    transform: scale(1.05);
+}
+
 /* ESTILO DO CABEÇALHO */
 header {
     padding: 40px 4%;
@@ -77,12 +83,6 @@ header nav ul {
 header nav ul li {
     display: inline-block;
     padding: 0 40px;
-}
-
-.btn-contato button:hover {
-    box-shadow: 0px 0px 8px rgb(110, 53, 255);
-    transition: .2s;
-    transform: scale(1.05);
 }
 
 /* ESTILO DO TOPO DO SITE */
@@ -202,3 +202,57 @@ section.especialidades .flex{
     }
 }
 
+/* ESTILO DO SOBRE */
+section.sobre{
+    padding: 80px 4%;
+}
+
+section.sobre .flex{
+    align-items: center;
+    gap: 60px;
+}
+
+.img-sobre img {
+    width: 350px; /* Define a largura da imagem */
+    height: 500px; /* Define a altura da imagem */
+    border-radius: 8%; /* Arredonda as bordas para criar um círculo */
+    object-fit: cover; /* Faz a imagem preencher todo o espaço disponível, mantendo as proporções */
+  }
+
+  .img-sobre:hover img {
+    transform: scale(1.05);
+    transition: .2s;
+  }
+
+.sobre .txt-sobre{
+    color: #fff;
+}
+
+.sobre .txt-sobre h2{
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span{
+    color: rgb(110, 53, 255);
+    display: block;
+}
+
+
+.sobre .txt-sobre p{
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.sobre .txt-sobre .btn-social button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(110, 53, 255);
+    font-size: 23px;
+    cursor: pointer;
+    margin: 0 7px;
+    transition: .2s;
+}
